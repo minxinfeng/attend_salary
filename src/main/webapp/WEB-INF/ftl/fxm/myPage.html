@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>我的活动</title>
+		<link rel="stylesheet" href="${rc.contextPath}/css/jquery.mobile-1.4.2.min.css">
+		<link rel="stylesheet" type="text/css" href="${rc.contextPath}/css/css.css">
+		<script src="${rc.contextPath}/js/jquery-1.10.2.min.js"></script>
+		<script src="${rc.contextPath}/js/jquery.mobile-1.4.2.min.js"></script>
+	</head> 
+	<body> 
+		<div data-role="page" id="myPage">
+		  <div data-role="header" data-position="fixed" class="header"  data-theme="b">
+			<h1>我的活动</h1>
+			<a href="#" id="setting" class="ui-btn-right" data-icon="gear">设置</a>
+		  </div>
+
+		  <div data-role="content" class="content">
+		  	<div data-role="tabs">
+			    <div data-role="navbar">
+			        <ul>
+			          <li><a href="#myActivity" class="ui-btn-active ui-tabs-anchor">发起</a></li>
+			          <li><a href="#attendActivity">参与</a></li>
+			          <li><a href="#favoriteActivity">收藏</a></li>
+			        </ul>
+			    </div>
+			    <div id="myActivity" >
+			        <ul data-role="listview" data-inset="true">
+					  	<li class="activity_item ui-li-static ui-body-inherit ui-li-has-thumb ui-first-child">
+							<img src="${rc.contextPath}/img/1.jpg">
+							<h3>活动名称：《鸟巢·吸引》</h3>
+							<p>2014-7-14 8:00</p>
+							<p>奥林匹克公园</p>
+							<p><span class="activity_star"></span>评级:5  <span class="activity_progress"></span>进度:80%  <span class="activity_discuss"></span>讨论数:30</p>
+						</li>
+
+						<li class="activity_item ui-li-static ui-body-inherit ui-li-has-thumb ui-last-child">
+							<img src="${rc.contextPath}/img/2.jpg">
+							<div class="my_activity"></div>
+							<h3>活动名称：《鸟巢·吸引》</h3>
+							<p>2014-7-14 8:00</p>
+							<p>奥林匹克公园</p>
+							<p><span class="activity_star"></span>评级:5  <span class="activity_progress"></span>进度:80%  <span class="activity_discuss"></span>讨论数:30</p>
+						</li>
+					</ul>
+			    </div>
+			    <div id="attendActivity">
+			        <p>我参与的活动.</p>
+			    </div>
+			    <div id="favoriteActivity">
+			        <p>我收藏的活动.</p>
+			    </div>
+		    </div>
+		  	
+		  	
+		  </div>
+
+		  <div data-role="footer" data-position="fixed" class="footer"   data-tap-toggle="false" data-theme="b">
+		  	<div data-role="navbar" data-iconpos="left">
+		      <ul>
+		        <li><a href="index.html" rel="external" data-icon="star">热点</a></li>
+		        <li><a href="activityList.html" rel="external" data-icon="bars">浏览</a></li>
+		        <li><a href="#myPage" data-icon="user" class="ui-btn-active">我的</a></li>
+		      </ul>
+		    </div>
+		  </div>
+
+		  <!-- 个人基本信息面板 -->
+		   	<div data-role="panel" id="myInfoPanel" data-position="right" data-display="push" data-theme="b">
+			    <div class="panel-content">
+			      <h3>个人基本信息</h3>
+			      <div class="profile_div">
+			      	 <img class="profile" src="${rc.contextPath}/img/icon.jpg">
+			      	 <p class="profile_edit">修改</p>
+			      </div>
+			      <div>
+			      	<p><span>用户名:minxin</span><span class="update_name">修改</span> </p>
+				    <p>手机号:12345678901</p>
+				    <p>个人简介:this is a jdf</p>
+			      </div>
+			     
+			      
+			      <a href="login.html" rel="external" role="button" data-role="button">退出登录</a>
+			      
+			    </div><!-- /content wrapper for padding -->
+			</div><!--/comment pannel -->
+		  
+		</div> 
+		
+		
+		<script>
+			$(document).on("pageinit","#myPage",function(){
+				//左滑，个人基本信息展示
+				$("body").on("swipeleft",function(){
+					$("#myInfoPanel").panel("open");
+				});
+				//点击设置，展示个人基本信息展示
+				$("#setting").on("tap",function(){
+					$("#myInfoPanel").panel("open");
+				});
+				
+				$(".activity_item").on("tap",function(){
+					//$.mobile.changePage("detail.html", { transition: "slideup"} ); 
+				 	window.open("detail.html","_self");
+			  	}); 
+			});
+		</script>
+	</body>
+</html>

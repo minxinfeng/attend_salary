@@ -1,0 +1,358 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>活动详情</title>
+		<link rel="stylesheet" href="${rc.contextPath}/css/jquery.mobile-1.4.2.min.css">
+		<link rel="stylesheet" type="text/css" href="${rc.contextPath}/css/css.css">
+		<script src="${rc.contextPath}/js/jquery-1.10.2.min.js"></script>
+		<script src="${rc.contextPath}/js/jquery.mobile-1.4.2.min.js"></script>
+	</head> 
+	<body> 
+		<div data-role="page" id="detailPage">
+			<!-- header -->
+		  <div data-role="header" data-position="fixed"  data-theme="b" class="header">
+			<h1>活动详情</h1>			
+		  </div>
+		  <!-- /header -->
+
+		  <!-- content -->
+		  <div data-role="content" class="content">
+
+		  	<div class="activity">
+		  		<div class="activity_pic_div">
+		  			<img class="activity_pic" src="${rc.contextPath}/img/1.jpg"></img>
+		  			<span class="activity_pic_num">1/3</span>
+		  		</div>
+				
+				<div class="activity_summary">
+					<p class="activity_what cutoff" title="《鸟巢·吸引》">《鸟巢·吸引》</p>
+					<p class="activity_who cutoff" title="rulerwzh">rulerwzh</p>
+					<p class="activity_when">2014-7-14 8:00</p>
+					<p class="activity_where cutoff" title="奥林匹克公园">奥林匹克公园</p>
+				</div>
+		  	</div>
+
+		   	<div class="donate">
+		   		<p class="donate_title">支持项</p>
+		   		<div class="donate_item_pre"></div>
+		   		<div class="donate_items">
+		   			<div class="donate_item">
+		   				<p> 测试</p>
+		   			</div>
+		   		</div>
+			   	<div class="donate_item_next"></div>
+
+			   	
+		   	</div>
+
+		   	<!-- 查看评论 -->
+		   	<div>
+		   		<input type="button" class="activity_comment" value="查看更新">
+		   	</div>
+
+		   	<div class="activity_detail">
+		      	<div data-role="collapsible" data-collapsed="false">
+				  <h3>详情</h3>
+				  <p>为鸟巢量身定做的传奇故事，以国际化的视野，以情感为主线，打造了一个“大爱至善”的故事。坚持少而精的原则，切实在丰富思想内涵、引领价值追求、增强文化底蕴融上下功夫，融入中华文化精髓。弘扬社会主义核心价值观，表现中国对于世界的责任、奉献和大国情怀的人文主张；体现出“以我为主，兼容并包”的开放姿态，展现北京文明、民主、开放、进步的良好形象。</p>
+				</div>
+		   	</div>
+
+		   	<div class="records records_fixed">
+		   		<p>a 为活动1 捐赠 场地1</p>
+				<p>b 为活动2 捐赠 水2</p>
+				<p>c 为活动3 捐赠 人气3</p>
+				<p>a 为活动1 捐赠 场地1</p>
+				<p>b 为活动2 捐赠 水2</p>
+				<p>c 为活动3 捐赠 人气3</p>
+				<p>a 为活动1 捐赠 场地1</p>
+				<p>b 为活动2 捐赠 水2</p>
+				<p>c 为活动3 捐赠 人气3</p>
+				<p>a 为活动1 捐赠 场地1</p>
+				<p>b 为活动2 捐赠 水2</p>
+		  	</div>
+
+		   </div>
+		   <!-- /content -->
+
+		   <!-- 捐大图效果 -->
+		   	<div data-role="popup" id="pic_large_popup" data-overlay-theme="b" class="ui-corner-all ui-popup ui-body-a ui-overlay-shadow" data-close-btn="none">
+			  		<div class="img_div">
+		  				<img src="">
+		  			</div>
+					<p class="pic_now"> 1/3</p>
+			</div>
+			<!-- /大图效果 -->
+
+		   <!-- 捐赠记录 -->
+		   	<div data-role="popup" id="records_all_popup" data-overlay-theme="b" class="ui-corner-all ui-popup ui-body-a ui-overlay-shadow" data-close-btn="none">
+			  	<p>a 为活动1 捐赠 场地1</p>
+				<p>b 为活动2 捐赠 水2</p>
+				<p>c 为活动3 捐赠 人气3</p>
+				<p>a 为活动1 捐赠 场地1</p>
+				<p>b 为活动2 捐赠 水2</p>
+				<p>c 为活动3 捐赠 人气3</p>
+			</div>
+			<!-- /捐赠记录 -->
+
+		   <!-- 捐赠 -->
+		   	<div data-role="popup" id="donate_item_action"  data-overlay-theme="b" class="ui-corner-all ui-popup ui-body-a ui-overlay-shadow" data-close-btn="none">
+				<div style="padding:10px 20px;">
+				  <h3 class="donate_pop_title text_center"></h3>
+		          <div class="donate_plus"><span>+</span></div>
+		          <div class="donate_values">
+		          	<p class="donate_value_add">+</p>
+		          	<input type="text" class="donate_number" name="donate_number" value="1" data-theme="a" readonly>
+		          	<p class="donate_value_min">-</p>
+		          </div>
+		          
+		          <div>
+		    	  	<input type="button" data-theme="b" id="support_commit" class="support_commit ui-btn ui-btn-b ui-shadow ui-corner-all" value="支持">
+		    	  </div>
+				</div>
+			</div>
+			<!-- /捐赠 -->
+
+			<!-- 分享 -->
+		   	<!-- <div data-role="popup" id="share_action_popup" data-overlay-theme="b" class="ui-corner-all ui-popup ui-body-a ui-overlay-shadow" data-close-btn="none"> -->
+		   	<div data-role="popup" id="share_action_popup" data-overlay-theme="b" class="ui-corner-all ui-popup ui-body-a ui-overlay-shadow" data-close-btn="none">
+				<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友">腾讯朋友</a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网">豆瓣网</a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ好友</a><a href="#" class="bds_t163" data-cmd="t163" title="分享到网易微博">网易微博</a><a href="#" class="bds_fx" data-cmd="fx" title="分享到飞信">飞信</a><a href="#" class="bds_xg" data-cmd="xg" title="分享到鲜果">鲜果</a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook">Facebook</a></div>
+				<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+			</div>
+			<!-- /分享 -->
+
+		   <!-- 评论面板 -->
+		   <div data-role="panel" id="commentPanel" data-position="right" data-display="push">
+		    	<div class="panel-content">
+			    	<h3>这里是更新</p>
+			    	<div data-role="collapsible-set">
+				      	<div data-role="collapsible" data-collapsed="false">
+						  <h3>A发布的更新</h3>
+						  <p>该更新对应的评论</p>
+						</div>
+						<div data-role="collapsible">
+						  <h3>A发布的更新</h3>
+						  <p>该更新对应的评论</p>
+						</div>
+						<div data-role="collapsible">
+						  <h3>A发布的更新</h3>
+						  <p>该更新对应的评论</p>
+						</div>
+						<input type="text" name="comment" placeholder="发表评论" value="" data-mini="true">
+						<input type="button" class="activity_comment" data-mini="true" value="发表评论">
+					</div>
+		    	</div><!-- /content wrapper for padding -->
+		    </div><!--/comment pannel -->
+
+		  <!-- footer -->
+		  <div data-role="footer" data-position="fixed" class="footer"  data-tap-toggle="false"  data-theme="b">
+		  	<div data-role="navbar" data-iconpos="left">
+		      <ul>
+		        <li><a href="index.html" data-rel="back" data-icon="arrow-l" data-theme="b">返回</a></li>
+		        <li><input type="button" class="favorites" data-icon="star"  value="收藏"></li>
+				<li><a href="#share_action_popup" data-rel="popup" data-position-to="window" data-icon="action" data-theme="b">分享</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		  <!-- /footer -->
+		</div> 		
+		<script>
+			$(document).on("pageinit","#detailPage",function(){
+
+				//评论面板
+				$(".activity_comment").on("tap",function(event){
+					event.preventDefault();
+					$("#commentPanel").panel("open");
+				});
+
+				//滚动播放捐赠记录
+				$('.records p:first').siblings().hide();
+				var records_scroll = function(){
+			      $('.records p:visible').slideUp('slow', function(){
+			          $(this).next('.records p')[0] === undefined ? $('.records p:first').fadeIn("slow") : $(this).next('.records p').fadeIn("slow");
+			      });
+			    };
+			    var records_interval = setInterval(records_scroll,1000*3);
+
+			    //捐赠项左右移动效果
+			    //获取捐赠项的个数
+			    var donate_items = new Array("场地","灯光","舞台","餐饮","人气","道具","道具1","道具2","道具3");//从服务器获取，所有捐赠项
+			    var donate_items_size = donate_items.length;
+			    var page_now = 1;//现在是第几页
+			    //获取捐赠项整体宽度
+			    var donate_items_width = window.screen.availWidth - 32 - parseInt($(".donate_items").css("margin-left").replace(/^[^\d.*]/,''));
+			    //每个捐赠项的宽度
+			    var donate_item_width = parseInt($(".donate_item").css("width").replace(/^[^\d.*]/,'')) + parseInt($(".donate_item").css("margin-left").replace(/^[^\d.*]/,'')) + 2;
+			    //每行可以放几条捐赠项记录
+			    var donate_size_per_line = parseInt(donate_items_width/donate_item_width);
+				//console.log("donate_items_width:"+donate_items_width + ";donate_item_width:" + donate_item_width + ";donate_size_per_line:" + donate_size_per_line);
+				//当一行装不下所有记录时
+			    if(donate_size_per_line < donate_items_size){
+			    	//添加下一页按钮
+			    	$(".donate_item_next").addClass("next");
+			    	//重新计算每行可以放几个
+			    	donate_items_width = window.screen.availWidth * $(".donate_items").width() / 100 - parseInt($(".next").css("width").replace(/^[^\d.*]/,'')) - 32;
+					donate_size_per_line = parseInt(donate_items_width/donate_item_width);
+					//console.log("donate_items_width:" + donate_items_width + ";donate_item_width:" +  donate_item_width + "; size:" + donate_size_per_line); 
+
+					//放第一页的记录
+					var donate_items_html = '';
+			    	for (var i = 0; i < donate_size_per_line; i++) {
+			    		donate_items_html = donate_items_html + '<div class="donate_item">' + '<p>' + donate_items[i] + '</p>' + '</div>';
+			    	};
+			    	$(".donate_items").html(donate_items_html);
+
+					$(".donate .donate_item_next").on("tap",function(){
+						page_now ++;
+						//console.log("page_now:" + page_now + ",donate_size_per_line:"+ donate_size_per_line+";donate_items_size:"+donate_items_size);
+
+						if (page_now * donate_size_per_line > donate_items_size) {//如果下一页可以放下所有剩下的元素
+							$(".donate_item_next").removeClass("next");
+							$(".donate_item_pre").addClass("pre");
+							//填充剩下的项目
+							donate_items_html = '';
+					    	for (var i = (page_now-1) * donate_size_per_line; i < donate_items_size; i++) {
+					    		donate_items_html = donate_items_html + '<div class="donate_item">' + '<p>' + donate_items[i] + '</p>' + '</div>';
+					    	};
+					    	$(".donate_items").html(donate_items_html);
+						}else{//下一页无法放下剩下所有的项目
+							$(".donate_item_next").addClass("next");
+							$(".donate_item_pre").addClass("pre");
+							//填充剩下的项目
+							donate_items_html = '';
+					    	for (var i = (page_now-1) * donate_size_per_line; i < donate_items_size; i++) {
+					    		donate_items_html = donate_items_html + '<div class="donate_item">' + '<p>' + donate_items[i] + '</p>' + '</div>';
+					    	};
+					    	$(".donate_items").html(donate_items_html);
+
+						}
+						
+					});
+
+					$(".donate .donate_item_pre").on("tap",function(){
+						page_now --;
+						var start_index = (page_now-1) * donate_size_per_line;
+						if(page_now >= 2){
+							$(".donate_item_next").addClass("next");
+							$(".donate_item_pre").addClass("pre");
+						}else{
+							$(".donate_item_next").addClass("next");
+							$(".donate_item_pre").removeClass("pre");
+						}
+
+						//填充剩下的项目
+						donate_items_html = '';
+				    	for (var i = start_index; i < (start_index + donate_size_per_line > donate_items_size ? donate_items_size : start_index + donate_size_per_line); i++) {
+				    		donate_items_html = donate_items_html + '<div class="donate_item">' + '<p>' + donate_items[i] + '</p>' + '</div>';
+				    	};
+				    	$(".donate_items").html(donate_items_html);
+					});
+			    }else{//一行可以放下所有的记录时
+			    	var donate_items_html = '';
+			    	for (var i = 0; i < donate_items_size; i++) {
+			    		donate_items_html = donate_items_html + '<div class="donate_item">' + '<p>' + donate_items[i] + '</p>' + '</div>';
+			    	};
+			    	$(".donate_items").html(donate_items_html);
+			    }
+
+			    //捐赠项点击效果
+			   $(".donate_items").on("tap",".donate_item",function(event){
+			   		event.preventDefault();
+			    	$("#donate_item_action").popup("open");
+			    	$(".donate_pop_title").text($(this).children("p").text());
+
+			    	var donate_number_val = parseInt($(".donate_number").val());
+			    	//支持数增加
+			    	$(".donate_value_add").on("tap",function(){
+			    		donate_number_val ++;
+			    		$(".donate_number").val(donate_number_val);
+			    	});
+			    	//支持数减少
+			    	$(".donate_value_min").on("tap",function(){
+			    		if(donate_number_val > 1){
+			    			donate_number_val --;
+			    			$(".donate_number").val(donate_number_val);
+			    		}
+
+			    	});
+			    });
+
+			    //提交支持数目
+			    //$(".support_commit").on("tap",function(){
+			    $("#donate_item_action").on("tap",".support_commit",function(event){
+			    	event.preventDefault();
+			    	$("#donate_item_action").popup("close");
+
+			    })
+
+			    //捐赠记录点击效果
+				$(".content").on("tap",".records",function(event){
+					event.preventDefault();
+					$("#records_all_popup").popup("open");					
+				});
+
+				$("#records_all_popup").on("tap",function(){
+					$(this).popup("close");
+				});
+
+
+			    //图片点击效果
+			    // $(".activity_pic").on("tap",function(){
+			    $(".content").on("tap",".activity_pic",function(event){
+			    	event.preventDefault();
+			    	var pics = new Array('${rc.contextPath}/img/1.jpg',"${rc.contextPath}/img/2.jpg","${rc.contextPath}/img/3.jpg");
+			    	var pic_all = pics.length;//图片总数
+
+			    	var x_start = ($( window ).width()-$("#pic_large_popup img").width)/2;
+			    	var y_start = ($( window ).height()-$("#pic_large_popup img").height)/2;
+
+			    	$("#pic_large_popup").popup("open");
+			    	$("#pic_large_popup").popup("reposition", {x:x_start,y:y_start});
+										
+			    	//设置图片
+			    	$("#pic_large_popup img").attr("src",pics[0]);			    	
+					var pic_now = 1;//当前展示的是第几张图片
+					
+					//图片左右翻页效果,下一张
+					$("#pic_large_popup").on("swipeleft",function(){
+						if(pic_now < pic_all){
+							pic_now ++;
+						}else{
+							pic_now = 1;
+						}
+						$("#pic_large_popup img").attr("src",pics[pic_now - 1]);
+						$("#pic_large_popup .pic_now").text( pic_now + "/" + pic_all );
+					});
+					//图片左右翻页效果,上一张
+					$("#pic_large_popup").on("swiperight",function(){
+						if(pic_now > 1){
+							pic_now --;
+						}else{
+							pic_now = pic_all;
+						}
+						$("#pic_large_popup img").attr("src",pics[pic_now - 1]);
+						$("#pic_large_popup .pic_now").text( pic_now + "/" + pic_all );
+					});
+					
+					//点击图片，图片图层消失
+					$("#pic_large_popup img").on("tap", function(){
+						$("#pic_large_popup").popup("close");
+					});
+			    });
+
+				//收藏当前活动
+				$(".favorites").on("tap", function(){
+					if($(this).parent("div").hasClass("ui-btn-active")){
+						$(this).parent("div").removeClass("ui-btn-active");
+						$(this).parent("div").removeClass("ui-focus");
+					}else{
+						$(this).parent("div").addClass("ui-btn-active");
+					}
+				});
+
+			});
+			 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>热点|城市</title>
+		<link rel="stylesheet" href="${rc.contextPath}/css/jquery.mobile-1.4.2.min.css">
+		<link rel="stylesheet" type="text/css" href="${rc.contextPath}/css/css.css">
+		<script src="${rc.contextPath}/js/jquery-1.10.2.min.js"></script>
+		<script src="${rc.contextPath}/js/jquery.mobile-1.4.2.min.js"></script>
+	</head> 
+	<body> 
+		<div data-role="page" id="hotPage">
+		  <div data-role="header" data-position="fixed" class="header"  data-theme="b">
+			<h1>热点|城市</h1>
+		  </div>
+
+		  <!-- content -->
+		  <div data-role="content" class="content">
+		  	<div class="records">
+		  		<p>a 为活动1 捐赠 场地1</li>
+				<p>b 为活动2 捐赠 水2</li>
+				<p>c 为活动3 捐赠 人气3</li>
+		  	</div>
+
+		  	<!-- activity item -->
+		  	<div class="activity_hot" id="1">
+				<div>
+					<img class="activity_icon" src="${rc.contextPath}/img/1.jpg"></img>
+					<div class="name_author">
+						<p class="activity_name">名称：《鸟巢·吸引》</p>
+						<p class="activity_author">发布者：小王</p>
+					</div>
+					
+				</div>
+				
+				<p class="activity_time">时间:2014-10-20 16:00:00</p>
+			  	<p class="activity_place">地点:北京展览馆</p>
+			  	<div class="progress_info">
+			  		<!-- <div class="progress">
+			  			<span class="progress_bar"></span>
+			  		</div> -->
+			  		<progress class="prog" value="60" max="100"></progress>
+			  		<span class="progress_number">60%</span>
+			  	</div>
+
+			  	<div class="star_info">
+			  		<div class="star">
+			  			<span class="star_bar"></span>
+			  		</div>
+			  		<span class="star_number">2.5</span>
+			  	</div>
+			  	<div class="other">
+			  		<span class="support_number"></span><!-- 支持人数： -->5
+			  		<span class="discuss_number"></span><!-- 评论数： -->3
+			  		<span class="wb_left"></span><!-- 剩余W币： -->100
+			  	</div>
+		  	</div><!-- /activity item -->
+		  	
+		  	<!-- activity item -->
+		  	<div class="activity_hot" id="2">
+				<div>
+					<img class="activity_icon" src="${rc.contextPath}/img/2.jpg"></img>
+					<div class="name_author">
+						<p class="activity_name">名称：《鸟巢·吸引》</p>
+						<p class="activity_author">发布者：小王</p>
+					</div>
+					
+				</div>
+				
+				<p class="activity_time">时间:2014-10-20 16:00:00</p>
+			  	<p class="activity_place">地点:北京展览馆</p>
+			  	<div class="progress_info">
+			  		<!-- <div class="progress">
+			  			<span class="progress_bar"></span>
+			  		</div> -->
+			  		<progress class="prog" value="60" max="100"></progress>
+			  		<span class="progress_number">60%</span>
+			  	</div>
+
+			  	<div class="star_info">
+			  		<div class="star">
+			  			<span class="star_bar"></span>
+			  		</div>
+			  		<span class="star_number">2.5</span>
+			  	</div>
+			  	<div class="other">
+			  		<span class="support_number"></span><!-- 支持人数： -->5
+			  		<span class="discuss_number"></span><!-- 评论数： -->3
+			  		<span class="wb_left"></span><!-- 剩余W币： -->100
+			  	</div>
+		  	</div><!-- /activity item -->
+
+		   </div><!-- /content -->
+
+
+		  <div data-role="footer" data-position="fixed" class="footer" data-tap-toggle="false"  data-theme="b">
+		  	<div data-role="navbar" data-iconpos="left">
+		      <ul>
+		        <li><a href="#hotPage" data-icon="star" class="ui-btn-active">热点</a></li>
+		        <li><a href="activityList.html" rel="external" data-icon="bars">浏览</a></li>
+		        <li><a href="myPage.html"  rel="external" data-icon="user">我的</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		  
+		</div> 
+		
+		
+		<script>
+			$(document).on("pageinit","#hotPage",function(){
+				//滚动播放捐赠记录
+				$('.records p:first').siblings().hide();
+				setInterval(function(){
+			      $('.records p:visible').slideUp('slow', function(){
+			          $(this).next('.records p')[0] === undefined ? $('.records p:first').fadeIn("slow") : $(this).next('.records p').fadeIn("slow");
+			      });
+			    }, 1000*3);
+
+			  $(".activity_hot").on("tap",function(){
+				 window.open("detail.html","_self");
+				 //$.mobile.changePage("detail.html", { transition: "slideup"} ); 
+			  });
+                 
+			});
+		</script>
+	</body>
+</html>

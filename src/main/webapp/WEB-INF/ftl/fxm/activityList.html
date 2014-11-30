@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>浏览</title>
+		<link rel="stylesheet" href="${rc.contextPath}/css/jquery.mobile-1.4.2.min.css">
+		<link rel="stylesheet" type="text/css" href="${rc.contextPath}/css/css.css">
+		<script src="${rc.contextPath}/js/jquery-1.10.2.min.js"></script>
+		<script src="${rc.contextPath}/js/jquery.mobile-1.4.2.min.js"></script>
+	</head> 
+	<body> 
+		<div data-role="page" id="listPage">
+		  <div data-role="header" data-position="fixed" class="header"  data-theme="b">
+			<h1>活动浏览</h1>
+		  </div>
+
+		  <div data-role="content" class="content">
+		  	<div class="search_info">
+		  		<input type="search" class="search_input" placeholder="关键字/地点" name="search-mini" value="" data-mini="true"  data-theme="a">
+				<span class="search_button"></span>
+		  	</div>
+		  	
+		  	<div>
+		  		<fieldset data-role="controlgroup" data-type="horizontal" >
+				    <select name="select-custom-14" id="select-custom-14" data-native-menu="false" class="activity_navibar">
+				    	<option value="#">时间</option>
+				    	<option value="#">全部</option>
+				        <option value="#">今天</option>
+				        <option value="#">明天</option>
+				    </select>
+				    <select name="select-custom-15" id="select-custom-15" data-native-menu="false" class="activity_navibar">
+				        <option value="#">类型</option>
+				        <option value="#">全部</option>
+				        <option value="#">话剧</option>
+				    </select>
+				    <select name="select-custom-16" id="select-custom-16" data-native-menu="false" class="activity_navibar">
+				        <option value="#">地区</option>
+				        <option value="#">北京</option>
+				        <option value="#">上海</option>
+				    </select>
+				</fieldset>
+		  	</div>
+		  	
+		  	<!-- 活动列表 -->
+		  	<ul data-role="listview" data-inset="true">
+			  	<li class="activity_item ui-li-static ui-body-inherit ui-li-has-thumb ui-first-child">
+					<img src="${rc.contextPath}/img/1.jpg">
+					<div class="my_activity"></div>
+					<h3>活动名称：《鸟巢·吸引》</h3>
+					<p>2014-7-14 8:00</p>
+					<p>奥林匹克公园</p>
+					<p><span class="activity_star"></span>评级:5  <span class="activity_progress"></span>进度:80%  <span class="activity_discuss"></span>讨论数:30</p>
+				</li>
+
+				<li class="activity_item ui-li-static ui-body-inherit ui-li-has-thumb ui-last-child">
+					<img src="${rc.contextPath}/img/2.jpg">
+					<h3>活动名称：《鸟巢·吸引》</h3>
+					<p>2014-7-14 8:00</p>
+					<p>奥林匹克公园</p>
+					<p><span class="activity_star"></span>评级:5  <span class="activity_progress"></span>进度:80%  <span class="activity_discuss"></span>讨论数:30</p>
+				</li>
+			</ul>
+
+		   </div>
+
+		  <div data-role="footer" data-position="fixed" class="footer"   data-tap-toggle="false" data-theme="b">
+		  	<div data-role="navbar" data-iconpos="left">
+		      <ul>
+		        <li><a href="index.html" rel="external" data-icon="star">热点</a></li>
+		        <li><a href="#listPage" data-icon="bars"  class="ui-btn-active">浏览</a></li>
+		        <li><a href="myPage.html"  rel="external" data-icon="user">我的</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		  
+		</div> 
+		
+		
+		<script>
+			$(document).on("pageinit","#listPage",function(){
+				$(".activity_item").on("tap",function(){
+				 	window.open("detail.html","_self");
+			  	});   
+			  	
+
+			  	$(".search_input").parent("div").css("width","70%");
+			  	$(".search_input").parent("div").css("display","inline-block");
+			});
+		</script>
+	</body>
+</html>
