@@ -1,3 +1,4 @@
+[![Build Status](https://api.travis-ci.org/minxinfeng/attend_salary.svg?branch=master)](https://travis-ci.org/minxinfeng/attend_salary)
 # attend_salary
 Calculate the salary of exact month instead of manually based on collect the statistics of attendance, workload。 记录员工的出勤/工件数等，并生成相关报表。
 
