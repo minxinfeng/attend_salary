@@ -9,6 +9,7 @@ Calculate the salary of exact month instead of manually based on collect the sta
 4. 工时管理(请假与否)
 5. 统计某个月的工资数，包括工件基本工资+出勤+绩效等(绩效=(工件基本工资-base)*rate%)，每个工件的总数，并生成相关报表
 
+test for revert
 
 # Point
 1. 工件单价发生改变，如何确保之前的工资统计信息的准确性？
